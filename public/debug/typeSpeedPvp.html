@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket.io Chat with Rooms</title>
+    <link rel="stylesheet" type="text/css" href="css/typeSpeedPvp.css">
+</head>
+<body>
+    <h1>Typing Speed PvP Debug</h1>
+
+    <div class="float-left">
+        <div class="sidebar-active-players">
+            <h2>Players in Room</h2>
+            <ul id="active-players"></ul>
+        </div>
+        <hr>
+        <div class="sidebar-chat-box">
+            <h2>Room Chat</h2>
+            <ul id="messages"></ul>
+            
+            <input id="message-input" placeholder="Type your message">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+
+    <div class="float-right">
+        <button id="ready-button">Ready</button>
+        <button id="unready-button" hidden>Cancel Ready</button>
+        <div id="countdown">The game starts in 5</div>
+        <div id="gameTimer">⏱️ 0 Sec</div>
+        <div id="placeholder" data-placeholder="Test">
+            <textarea id="input-field"></textarea>  
+        </div>
+        <div id="result">
+            <h2>Results</h2>
+            <ul id="result-list"></ul>
+            <button id="result-close">Close</button>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/typeSpeedPvp.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Socket.io Chat with Rooms</title>
+</head>
+<body>
+    <h1>Type Speed PvP Debug</h1>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <div id="button-container">
+        <button id="create-room-button">Create Room</button>
+        <button id="join-room-button">Join Room</button>
+    </div>
+
+    <!-- Create room panel -->
+    <div id="create-room-panel" action="/debug/testMash" method="get" style="display: none;">
+        <button id="create-back-button">Back</button>
+        <h2>Create Room</h2>
+        <form id="create-room">
+            <div>
+                <label for="room-create-input">Room:</label>
+                <input type="text" id="room-create-input" name="room" placeholder="Enter room name" autocomplete="off" required>
+            </div>
+            
+            <div>
+                <label for="username-create-input">Username:</label>
+                <input type="text" id="username-create-input" name="username" placeholder="Enter your username" autocomplete="off" required>
+            </div>
+    
+            <!-- <label for="game-mode-input">Game Mode:</label>
+            <div id="game-mode-input">
+                <label>
+                    <input type="radio" name="gameMode" value="FFF" id="game-mode-fff" required>
+                    Fastest Finger First
+                </label>
+            
+                <label>
+                    <input type="radio" name="gameMode" value="WPM" id="game-mode-wpm" required>
+                    WPM War
+                </label>    
+            </div> -->
+            
+            <button type="submit" id="create-button">Create Room</button>
+        </form>
+        
+        <br><hr>
+    </div>
+
+    <!-- Join room panel -->
+    <div id="join-room-panel" action="/debug/testMash" method="get" style="display: none;">
+        <button id="join-back-button">Back</button>
+        <h2>Join Room</h2>
+        <form id="join-room">
+            <div>
+                <label for="room-join-input">Room:</label>
+                <input type="text" id="room-join-input" placeholder="Enter room name" autocomplete="off" required>
+            </div>
+            
+            <div>
+                <label for="username-join-input">Username:</label>
+                <input type="text" id="username-join-input" placeholder="Enter your username" autocomplete="off" required>
+            </div>
+            
+            <button type="submit" id="join-button">Join Room</button>
+        </form>
+        
+        <br><hr>
+    </div>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

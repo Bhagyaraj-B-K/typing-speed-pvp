@@ -1,0 +1,137 @@
+/* Add your styles here */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px; /* Add padding to the body to reduce side margins */
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Input fields and labels */
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+#game-mode-input label {
+    font-size: medium;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Radio buttons and their labels */
+#team-input {
+    margin-top: 20px;
+}
+
+#team-input label {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+/* Buttons */
+button {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+}
+
+#join-room-button, #create-room-button {
+    font-size: 24px;
+    width: 300px; /* Set a fixed width */
+    height: 150px; /* Set a fixed height */
+    margin: 10px;
+}
+
+#join-button, #create-button, #mash-counter {
+    margin: 10px 0% 10px 46%;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Chat messages and counters */
+#messages {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#messages li {
+    margin: 5px;
+}
+
+/* Message input and send button */
+#message-container {
+    display: flex;
+}
+
+#message-input {
+    width: 85%;
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#send-button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Scoreboard style for Red and Blue Count */
+#team-counters {
+    display: flex;
+    justify-content: space-between;
+}
+
+.scoreboard {
+    text-align: center;
+    flex: 1; /* Equal width for both Red and Blue Count containers */
+    margin: 10px; /* Reduce the margin between them */
+}
+
+#team-red-counter, #team-blue-counter {
+    padding: 45px 10px;
+    font-size: 100px;
+    font-weight: bold;
+    background-color: #e74c3c; /* Red background color */
+    color: #fff;
+    border: 1px solid #c0392b;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#team-blue-counter {
+    background-color: #3498db; /* Blue background color */
+    border: 1px solid #2980b9;
+}

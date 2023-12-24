@@ -117,6 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
             typingBoard.style.display = 'block';
             typingBoard.setAttribute('data-placeholder', data.text);
             gameTimerDiv.style.display = 'block';
+            inputField.focus();
 
             let gameTimer = data.timer;
             gameTimerDiv.textContent = `⏱️ ${gameTimer--} Sec`;

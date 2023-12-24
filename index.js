@@ -12,6 +12,7 @@ app.use(express.static(path.join(__dirname+'/public')));
 const routes = require('./routes')(app); 
 const events = require('./events')(io); 
 
-server.listen(3000, () => {
+const port = 3000;
+server.listen(process.env.PORT || port, () => {
     console.log('Server is Up');
 });

@@ -44,7 +44,7 @@ const socketHandler = async (io) => {
             
             console.log('Everyone ready in room', room, JSON.stringify(roomData));
             io.to(room).emit('message', `Everyone Ready!!! The Game is about to begin...`);
-            const roomParagraph = generate({exactly: 25, join: " "});
+            const roomParagraph = generate({exactly: roomData[room]['maxWords'], join: " "});
             roomData[room]['paragraph'] = roomParagraph;
             io.to(room).emit('start game', {text: roomParagraph, timer: GLB.TIMER.ROOM});
             gameTimer(room, (GLB.TIMER.ROOM + GLB.TIMER.BUFFER));
@@ -62,7 +62,7 @@ const socketHandler = async (io) => {
                     socket.emit('error', `Room name already in use!`);
                     return;
                 }
-                roomData[room] = {mode: gameMode, users: {}, status: GLB.STATUS.ACTIVE};
+                roomData[room] = {mode: gameMode, maxWords: GLB.GAMEPLAY.MAX_WORDS, users: {}, status: GLB.STATUS.ACTIVE};
                 socket.emit('joining room', {room, gameMode, username});
             } catch (e) {
                 console.log(e);

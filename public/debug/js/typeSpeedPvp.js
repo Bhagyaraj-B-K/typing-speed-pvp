@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     socket.emit('join', room, username);
 
+    const roomNameDisplay = document.getElementById('roomname-display');
     const messages = document.getElementById('messages');
     const messageInput = document.getElementById('message-input');
     const sendButton = document.getElementById('send-button');
@@ -40,7 +41,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const gameTimerDiv = document.getElementById('gameTimer');
     let userInput, gameTimerInterval;
 
+
+    roomNameDisplay.textContent = `Players in Room [${room}]`;
     // message handling
+    messageInput.addEventListener('keyup', (event) => {if (event.key === 'Enter') sendButton.click()});
+
     sendButton.addEventListener('click', () => {
         const message = messageInput.value;
         if (message) {
@@ -72,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if(msg == 'Room not found!') {
             window.location.href = '/debug';
         } else {
-            //TODO: Display error mssg swal
+            alert(`ERROR! ${msg}`);
         }
     });
 

@@ -6,7 +6,10 @@ module.exports = {
         COMPLETED : 4,
     },
     TIMER: {
-        ROOM : 60,
+        ROOM : process.env.GAMETIMER || 60,
         BUFFER : 5,
+    },
+    GAMEPLAY: {
+        MAX_WORDS: process.env.MAX_WORDS || 25,
     }
 }

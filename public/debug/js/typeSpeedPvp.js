@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     inputField.addEventListener('input', (e) => {
-        const inputValue = inputField.value.trim();
+        const inputValue = inputField.value.replace(/\n/g, ' ').trim();
         const msgValue = userInput.trim();
 
         if (inputValue === msgValue) {
